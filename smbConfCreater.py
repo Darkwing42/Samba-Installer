@@ -1,9 +1,24 @@
 #Erstellt die normale smb.conf Datei
 
 
-import os
+import os, os.path, shutil
+
 class smbConfCreater():
     pass
+
+def backupSmbConf():
+    path = "/etc/samba/smb.conf"
+    
+    if os.path.exists(path) == True:
+        print("Die smb.conf Datei existiert bereits. Erstelle Backup........\n")
+        shutil.move(path, "/etc/samba/smb.conf.bak")
+        print("Backup erstellt. Neue smb.conf Datei wird generiert.\n")
+        ConfCreater()
+    elif os.path.exists(path) == False:
+        print("Generiere neue smb.conf Datei.....\n")
+        ConfCreater()
+
+    
 
 def ConfCreater():
     serverName = input("Unter welcher Bezeichnung soll der Server im Netzwerk zu finden sein?\n")

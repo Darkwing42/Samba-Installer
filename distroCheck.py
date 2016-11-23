@@ -1,7 +1,7 @@
 #Checkt welche Linux Distribution installiert ist
 
 
-import platform, sys smbServerInstaller
+import platform, sys, smbServerInstaller
 
 class distroCheck():
     pass

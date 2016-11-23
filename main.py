@@ -1,10 +1,12 @@
-import os, subprocess, platform, sys
-
+#!/usr/bin/python3
 
 import smbConfCreater, distroCheck
 
 
 distroCheck.osCheck() # Checkt die Linux Distribution
 
-smbConfCreater.ConfCreater() # Erstellt die Globale smb.conf
+
+
+smbConfCreater.backupSmbConf() # Erstellt die Globale smb.conf
+
 
