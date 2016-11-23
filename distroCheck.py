@@ -40,8 +40,11 @@ def osCheck():
     elif osCheckLower == centOSLower:
         print("CentOs gefunden.... Fahre fort!\n")
         smbServerInstaller.InstallerCentOS()
-        
-        
+    
+    else:
+        print("Das Betriebsystem wird nicht unterstützt!\n")
+        input("")
+        sys.exit()
 
 
 

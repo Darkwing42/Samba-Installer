@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import smbConfCreater, distroCheck, SharingRE
+import smbConfCreater, distroCheck, CentOs
 
 
 distroCheck.osCheck() # Prüft welche Linux Distribution installiert ist.
@@ -17,7 +17,7 @@ eingabe = eingabe.lower()
 
 
 if eingabe == "read-only":
-    SharingRE.shareDefinitionReadOnly()
+   CentOs.shareDefinitionReadOnly()
     
 #elif eingabe == "anonymous":
 
