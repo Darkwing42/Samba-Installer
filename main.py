@@ -1,5 +1,10 @@
-import os, subprocess
-from smbConfCreater import ConfCreater
+import os, subprocess, platform, sys
 
 
-ConfCreater()
+import smbConfCreater, distroCheck
+
+
+distroCheck.osCheck() # Checkt die Linux Distribution
+
+smbConfCreater.ConfCreater() # Erstellt die Globale smb.conf
+

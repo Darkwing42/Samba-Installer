@@ -1,3 +1,6 @@
+#Erstellt die normale smb.conf Datei
+
+
 import os
 class smbConfCreater():
     pass
@@ -15,4 +18,3 @@ def ConfCreater():
     openFile.close()
     
     
-ConfCreater()
