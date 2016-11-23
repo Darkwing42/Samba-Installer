@@ -6,6 +6,8 @@ import os, os.path, shutil
 class smbConfCreater():
     pass
 
+
+#Prüfung ob die Conf-Datei existiert
 def backupSmbConf():
     path = "/etc/samba/smb.conf"
     
@@ -19,11 +21,14 @@ def backupSmbConf():
         ConfCreater()
 
     
-
+#Globalen Parameter für die Conf-Datei
 def ConfCreater():
     serverName = input("Unter welcher Bezeichnung soll der Server im Netzwerk zu finden sein?\n")
+    workgroup = input("In welcher WORKGROUP befindet sich der Server?")
+    workgroup = workgroup.upper()
     openFile = open("/etc/samba/smb.conf", "w+")
     openFile.write("[global]\n")
+    openFile.write("workgroup = "+ workgroup + "\n")
     openFile.write("server string = Samba Server %v\n")
     openFile.write("netbios name = " + serverName + "\n")
     openFile.write("security = user\n")
