@@ -32,7 +32,7 @@ def osCheck():
     
     if osCheckLower == debianOSLower:
         print("Debian gefunden.... Fahre fort!\n")
-       smbServerInstaller.InstallerDebian()
+        smbServerInstaller.InstallerDebian()
        
                     
     #elif osCheckLower == antergosOSLower:
