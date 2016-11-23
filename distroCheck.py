@@ -1,7 +1,7 @@
 #Checkt welche Linux Distribution installiert ist
 
 
-import platform, sys
+import platform, sys smbServerInstaller
 
 class distroCheck():
     pass
@@ -9,7 +9,7 @@ class distroCheck():
 
 def osCheck():
     debianOS = ("Debian", "", "")
-    antergosOS = ("Antergos Linux", "", "")
+    #antergosOS = ("Antergos Linux", "", "")
     centOS = ("CentOs Linux", "", "")
     
     global osCheck
@@ -19,9 +19,9 @@ def osCheck():
         debianOSLower = debianOS[0].lower()
         break
     
-    for osType in antergosOS:
-        antergosOSLower = antergosOS[0].lower()
-        break
+    #for osType in antergosOS:
+    #    antergosOSLower = antergosOS[0].lower()
+    #    break
     
     for osType in centOS:
         centOSLower = centOS[0].lower()
@@ -32,10 +32,14 @@ def osCheck():
     
     if osCheckLower == debianOSLower:
         print("Debian gefunden.... Fahre fort!\n")
-    elif osCheckLower == antergosOSLower:
-        print("Antergos gefunden.... Fahre fort!\n")
+        smbServerInstaller.InstallerDebian()
+        
+    #elif osCheckLower == antergosOSLower:
+    #    print("Antergos gefunden.... Fahre fort!\n")
     elif osCheckLower == centOSLower:
         print("CentOs gefunden.... Fahre fort!\n")
+        smbServerInstaller.InstallerCentOS()
+        
     else:
         print("Fehler kein Betriebsystem erkannt!\n")
         print("Programm wird beendet!\n")
