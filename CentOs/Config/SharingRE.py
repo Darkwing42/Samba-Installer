@@ -6,11 +6,12 @@ import os
 class ReadOnly():
     pass
 
-def shareDefinitionReadOnly():
+def shareReadOnly():
     path = "/etc/samba/smb.conf"
     openFile = open(path, "a")
     
     nameShare = input("Name der Freigabe?\n")
+    pathShare = input("Ordner der Samba Freigabe? \n")
     browsable = input("Soll die Freigabe durchsuchbar sein? y/n....\n")
     browsable = browsable.lower()
     writable = input("Soll die Freigabe beschreibbar sein? y/n....\n")
@@ -19,6 +20,9 @@ def shareDefinitionReadOnly():
     guestOk = guestOk.lower()
     readOnly = input("Read-Only? y/n...\n")
     readOnly = readOnly.lower()
+    
+    openFile.write("[" + nameShare + "]")
+    openFile.write(pathShare)
     
     if browsable == "y":
         openFile.write("browsable = yes")
