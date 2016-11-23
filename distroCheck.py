@@ -32,14 +32,23 @@ def osCheck():
     
     if osCheckLower == debianOSLower:
         print("Debian gefunden.... Fahre fort!\n")
-        smbServerInstaller.InstallerDebian()
+       retcode =  smbServerInstaller.InstallerDebian()
+       if retcode == 0:
+           pass
+       else:
+        print("Fehler kein Betriebsystem erkannt!\n")
+        print("Programm wird beendet!\n")
+        input("\n")
+        sys.exit()    
+            
         
     #elif osCheckLower == antergosOSLower:
     #    print("Antergos gefunden.... Fahre fort!\n")
     elif osCheckLower == centOSLower:
         print("CentOs gefunden.... Fahre fort!\n")
-        smbServerInstaller.InstallerCentOS()
-        
+        retcode = smbServerInstaller.InstallerCentOS()
+        if retcode == 0:
+            pass
     else:
         print("Fehler kein Betriebsystem erkannt!\n")
         print("Programm wird beendet!\n")
