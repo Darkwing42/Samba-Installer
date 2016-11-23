@@ -49,11 +49,11 @@ def osCheck():
         retcode = smbServerInstaller.InstallerCentOS()
         if retcode == 0:
             pass
-    else:
-        print("Fehler kein Betriebsystem erkannt!\n")
-        print("Programm wird beendet!\n")
-        input("\n")
-        sys.exit()
+        else:
+            print("Fehler kein Betriebsystem erkannt!\n")
+            print("Programm wird beendet!\n")
+            input("\n")
+            sys.exit()
 
         
 
